@@ -1,21 +1,30 @@
 import { StarshipStatus } from "../Enum/StarshipStatusEnum";
+import { v4 as uuidv4 } from 'uuid';  // Importer la version 4 d'UUID
+import { isUUID } from 'validator';
 
 export class Starship {
     // Déclaration des attributs
     ref: string;
     speed: number;
     status: StarshipStatus;
+    id: string;
   
     // Constructeur pour initialiser les attributs
-    constructor(ref: string, speed: number) {
+    constructor(ref: string, speed: number, id? : string) {
       this.ref = ref;
       this.speed = speed;
       this.status =  StarshipStatus.PARKED;
+      
+      if (id && isUUID(id, 4)) {
+        this.id = id;
+      } else {
+        this.id = uuidv4();
+      }
     }
   
     // Méthode pour afficher les informations du vaisseau
     displayInfo(): void {
-      console.log(`Starship Ref: ${this.ref}, Speed: ${this.speed} km/s, Status: ${this.status}`);
+      console.log(`Starship Ref: ${this.ref}, Speed: ${this.speed} km/s, Status: ${this.status}, ID: ${this.id}`);
     }
 
     takeOff(): void{
