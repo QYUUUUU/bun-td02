@@ -1,7 +1,7 @@
 import { Starship } from "./Classes/StarshipClass";
 import { v4 as uuidv4 } from 'uuid';  // Importer la version 4 d'UUID
 import type { Planet } from './Types/PlanetType';
-import { Planet } from './Types/PlanetType';
+import { calculateFlightDurationFromEarth } from "./utils/flightCalculator";
 
 const Prometheus = new Starship('Prometheus', 100000, uuidv4());
 Prometheus.displayInfo();
@@ -51,3 +51,14 @@ planets.forEach(planet => {
 if(planetCount != 0){
     console.log("La distance moyenne est de " + totalDistances/planetCount)
 }
+
+let unity = "heures";
+let meirion = { name: 'Meirrion', distanceFromEarth: 300000 };
+let dureeTrajetEnHeures= calculateFlightDurationFromEarth(meirion ,Prometheus, unity);
+console.log("Le trajet prendra "+dureeTrajetEnHeures+" "+unity+ " pour arriver à "+meirion.name);
+
+
+
+unity = "jour";
+dureeTrajetEnHeures= calculateFlightDurationFromEarth(meirion ,Prometheus, unity);
+console.log("Le trajet prendra "+dureeTrajetEnHeures+" "+unity+ " pour arriver à "+meirion.name);
