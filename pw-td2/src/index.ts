@@ -23,15 +23,14 @@ try{
 let planets:Planet[] = [];
 
 planets.push(
-    { name: 'Jupiter', distanceFromEarth: 658700000 },
-    { name: 'Arrakis', distanceFromEarth: 65400000 },
-    { name: 'Uranus', distanceFromEarth: 63800000 },
-    { name: 'Tatooine', distanceFromEarth: 500000000 },
-    { name: 'Pandora', distanceFromEarth: 750000000 },
-    { name: 'Meirrion', distanceFromEarth: 3000000000 },
-    { name: 'Abraxar', distanceFromEarth: 4000000000 } 
+    { name: 'Mercury', distanceFromEarth: 92000000 },   // 92 million km
+    { name: 'Venus', distanceFromEarth: 41000000 },     // 41 million km
+    { name: 'Mars', distanceFromEarth: 78000000 },      // 78 million km
+    { name: 'Jupiter', distanceFromEarth: 628000000 },  // 628 million km
+    { name: 'Saturn', distanceFromEarth: 1275000000 },  // 1.275 billion km
+    { name: 'Uranus', distanceFromEarth: 2724000000 },  // 2.724 billion km
+    { name: 'Neptune', distanceFromEarth: 4351000000 }  // 4.351 billion km
 );
-
 //Distance de la Terre
 planets.sort((a, b) => a.distanceFromEarth - b.distanceFromEarth);
 console.log(planets);
