@@ -1,7 +1,7 @@
-import { Starship } from "./Classes/StarshipClass";
-import { v4 as uuidv4 } from 'uuid';  // Importer la version 4 d'UUID
-import type { Planet } from './Types/PlanetType';
-import { calculateFlightDurationFromEarth } from "./utils/flightCalculator";
+// import { Starship } from "./Classes/StarshipClass";
+// import { v4 as uuidv4 } from 'uuid';  // Importer la version 4 d'UUID
+// import type { Planet } from './Types/PlanetType';
+// import { calculateFlightDurationFromEarth } from "./utils/flightCalculator";
 import { Citron } from "./Classes/Products/CitronClass";
 import { TomateCerise } from "./Classes/Products/TomateCeriseClass";
 import { HuileOlive } from "./Classes/Products/HuileOliveClass";
@@ -73,7 +73,7 @@ import { Cart } from "./Classes/CartClass";
 const citron = new Citron(0.5);
 const huileOlive = new HuileOlive(5);
 const tomatesCerise = new TomateCerise(3.5);
-const sucre = new Sucre(); // Prix aléatoire entre 1 et 3
+const sucre = new Sucre();
 
 // Créer un panier
 const cart = new Cart();
@@ -86,6 +86,6 @@ cart.add(tomatesCerise, 1.5);
 
 // Afficher les détails du panier
 console.log(cart.displayDetails());
-console.log(`Montant total tomates :cart.calculateAmountByProduct(tomatesCerise) €`);
+console.log(`Montant total tomates :${cart.calculateAmountByProduct(tomatesCerise)} €`);
 console.log(cart.getProductTypesCount());
 console.log(`Montant total: ${cart.calculateAmount()} €`);
