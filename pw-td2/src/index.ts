@@ -1,7 +1,6 @@
 import { Starship } from "./Classes/StarshipClass";
 import { v4 as uuidv4 } from 'uuid';  // Importer la version 4 d'UUID
 import type { Planet } from './Types/PlanetType';
-import { Planet } from './Types/PlanetType';
 
 const Prometheus = new Starship('Prometheus', 100000, uuidv4());
 Prometheus.displayInfo();
